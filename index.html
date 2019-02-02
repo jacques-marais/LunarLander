@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lunar Lander</title>
+	<link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+	<style type="text/css">
+		.wrapper { position: relative; width: 900px; height: 500px;}
+		.wrapper canvas {position: absolute; top: 0; left: 0;}
+		.button {position: relative; bottom: 200px;}
+		#canvas1 {z-index: 0; left: 0; top: 0;}
+		#canvas2 {z-index: 1; left: 0; top: 0;}
+	</style>
+	<script src="LunarLander.js" type="text/javascript" defer></script>
+</head>
+<body onload="setupGame()">
+	
+	<h1>Lunar Lander</h1>
+	
+	<input type="button" id="soundButton" onclick="soundOnOff()" value="Disable Sound" style="font-size:15px; margin-left:782px; width: 120px;">
+
+	<div class="wrapper">
+		<canvas id="canvas1" height="500" width="900" style="border: 1px solid black"
+			style="position: absolute""></canvas>
+
+		<canvas id="canvas2" height="500" width="900" style="border: 1px solid black"
+			style="position: absolute"></canvas>
+	</div> <br>
+	
+	<div style="white-space:nowrap; padding:3px; margin-left:-3px; width:900px;">
+		
+		<div style="padding:5px; border: 2px solid black; display: inline;">
+			<label style="font-size:20px; font-weight:bold">Timer:</label>
+			<form action="/action_page.php" style="display: inline;">
+				<input type="radio" name="time" value="30" checked="checked"><label style="font-size:20px">30 sec.</label>
+				<input type="radio" name="time" value="60"><label style="font-size:20px">60 sec.</label>
+			</form>
+		</div>
+	
+		<div style="padding:5px; border: 2px solid black; display: inline;">
+			<label style="font-size:20px; font-weight:bold;">Gravity:</label>	
+			<select id="gravityDropdown" style="font-size:15px;">
+				<option value="Weak">Weak</option>
+				<option value="Normal" selected="selected">Normal</option>
+				<option value="Strong">Strong</option>
+			</select>
+		</div>
+	
+		<div style="padding:5px; border: 2px solid black; display: inline;">
+			<label style="font-size:20px; font-weight:bold">Fuel Tank Size:</label>
+			<label style="font-size:20px;">&nbsp100L</label>
+			<input type="range" id="fuelTankRange" min="100" max="400" value="150">
+			<label style="font-size:20px;">&nbsp400L</label>
+		</div>
+	
+	
+		<input type="button" onclick="startGame()" value="Start Game!" style="font-size:15px; margin-left:5px">
+	</div>
+</body>
+</html>
